@@ -18,7 +18,7 @@ d3.csv("data/civ_data.csv").then(function (data)
 
 // This code will get the user's input from what the user will type in the html <input> since we assigned it the "user-input" id. It will get the value and store it in our inputValue variable
         var inputElement = d3.select("#user-input");
-        var inputValue = inputElement.property("value").toUpperCase().trim();;
+        var inputValue = inputElement.property("value").toUpperCase().trim();
 
 
         var filteredChroms = civ.filter(civ => civ.SYMBOL==inputValue);
@@ -46,5 +46,5 @@ d3.csv("data/civ_data.csv").then(function (data)
                 "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
                 "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
 
-    };
+    }
     });
