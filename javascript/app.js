@@ -14,7 +14,7 @@ d3.csv("data/civ_data.csv").then(function (data)
         d3.selectAll("p").classed('noresults', true).html("");
 
 // This code is needed to prevent the page from reloading.
-        d3.event.preventDefault();
+        //d3.event.preventDefault();
 
 // This code will get the user's input from what the user will type in the html <input> since we assigned it the "user-input" id. It will get the value and store it in our inputValue variable
         const inputElement = d3.select("#user-input");
