@@ -14,7 +14,7 @@ d3.csv("data/civ_data_1.csv").then(function (data)
         d3.selectAll("p").classed('noresults', true).html("");
 
 // This code is needed to prevent the page from reloading.
-        //d3.event.preventDefault();
+        d3.event.preventDefault();
 
 // This code will get the user's input from what the user will type in the html <input> since we assigned it the "user-input" id. It will get the value and store it in our inputValue variable
         var inputElement = d3.select("#user-input");
@@ -27,10 +27,10 @@ d3.csv("data/civ_data_1.csv").then(function (data)
 
         console.log(filteredChroms);
         console.log(filteredChroms.length);
-        //if (filteredChroms.length === 0){
-          //  d3.select("p").classed('noresults2', true).html("<strong>No record to match this symbol. Please contact to add this to our database!</strong>")
+        if (filteredChroms.length === 0){
+            d3.select("p").classed('noresults2', true).html("<strong>No record to match this symbol. Please contact to add this to the database!</strong>")
 
-       // }
+        }
 
          //using d3 populate the table
         for (var i = 0; i < filteredChroms.length; i++) {
