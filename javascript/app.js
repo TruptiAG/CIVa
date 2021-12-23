@@ -5,7 +5,7 @@ d3.csv("data/civ_data_1.csv").then(function (data)
         var button = d3.select("#button");
         var form = d3.select("#form");
         button.on("click", runEnter);
-        form.on("submit", runEnter);
+        form.on("onsubmit", runEnter);
 // Defining the function
     function runEnter() {
 
