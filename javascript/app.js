@@ -1,9 +1,9 @@
 d3.csv("data/civ_data.csv").then(function (data)
     {
 
-        var civ = data;
-        var button = d3.select("#button");
-        var form = d3.select("#form");
+        const civ = data;
+        const button = d3.select("#button");
+        const form = d3.select("#form");
         button.on("click", runEnter);
         form.on("submit", runEnter);
 // Defining the function
@@ -17,15 +17,15 @@ d3.csv("data/civ_data.csv").then(function (data)
        // d3.event.preventDefault();
 
 // This code will get the user's input from what the user will type in the html <input> since we assigned it the "user-input" id. It will get the value and store it in our inputValue variable
-        var inputElement = d3.select("#user-input");
-        var inputValue = inputElement.property("value").toUpperCase().trim();
+        const inputElement = d3.select("#user-input");
+        const inputValue = inputElement.property("value").toUpperCase().trim();
 
 
-        var filteredChroms = civ.filter(civ => civ.SYMBOL==inputValue);
+        const filteredChroms = civ.filter(civ => civ.SYMBOL == inputValue);
         //console.log(filteredChroms);
 
         // Once I had all the values in my output variable, all I needed was to loop through them and add them to the table one by one. This was done using d3, where I inserted the value for each one of the columns I wanted using the necessary html to fit each table row.
-        for (var i = 0; i < filteredChroms.length; i++) {
+        for (let i = 0; i < filteredChroms.length; i++) {
 
 
             d3.select("tbody").insert("tr").html(
@@ -39,19 +39,6 @@ d3.csv("data/civ_data.csv").then(function (data)
                 "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
                 "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
                 "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
-
-        const reader = require("g-sheets-api");
-        const readerOptions = {
-            sheetId: "1YEhFxIaQggoDsnAQZcT1k_w-A5ga-MjcfPzuwXBmKnk",
-            returnAllResults: false,
-            filter: {
-                "SYMBOL": inputValue,
-            },
-        };
-
-        reader(readerOptions, (results) => {
-            console.log(results);
-        });
 
 
 
