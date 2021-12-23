@@ -28,18 +28,18 @@ d3.csv("data/civ_data.csv").then(function (data)
         for (let i = 0; i < filteredChroms.length; i++) {
 
 
-            d3.select("tbody").insert("tr").html(
+            d3.select("tbody tr").insert("tr").html(
 
-               "<tr>"+ "<td>" + [i+1] + "</td>" +"</tr>"+
-                "<tr>"+  "<td>" + (filteredChroms[i]['Feature'])+"</td>" +"</tr>"+
-                "<tr>"+ "<td>" + (filteredChroms[i]['Protein position'])+"</td>"+"</tr>"+
-                "<tr>"+ "<td>" + (filteredChroms[i]['Amino acids'])+"</td>" +"</tr>"+
-                "<tr>"+  "<td>" + (filteredChroms[i]['N_Hom_E_LGH'])+"</td>" +"</tr>"+
-                "<tr>"+  "<td>" + (filteredChroms[i]['N_Hom_BiB'])+"</td>"+"</tr>"+
-                "<tr>"+ "<td>" + (filteredChroms[i]['N_Hom_Birm'])+"</td>" +"</tr>"+
-                "<tr>"+ "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+"</tr>"+
-                "<tr>"+  "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+"</tr>"+
-                "<tr>"+  "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>"+"</tr>") }
+                "<td>" + [i+1] + "</td>" +
+                "<td>" + (filteredChroms[i]['Feature'])+"</td>" +
+                "<td>" + (filteredChroms[i]['Protein position'])+"</td>"+
+                "<td>" + (filteredChroms[i]['Amino acids'])+"</td>" +
+                "<td>" + (filteredChroms[i]['N_Hom_E_LGH'])+"</td>" +
+                "<td>" + (filteredChroms[i]['N_Hom_BiB'])+"</td>"+
+                "<td>" + (filteredChroms[i]['N_Hom_Birm'])+"</td>" +
+                "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
+                "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
+                "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
 
 
 
