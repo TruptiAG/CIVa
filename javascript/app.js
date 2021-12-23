@@ -48,10 +48,3 @@ d3.csv("data/civ_data.csv").then(function (data)
 
     }
     });
-
-const GSheetReader = require('g-sheets-api')
-GSheetReader(
-    options,
-    results=> {console.log(results);},
-    error=>{console.log("error");}
-);
