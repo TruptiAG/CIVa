@@ -14,14 +14,17 @@ d3.csv("data/civ_data.csv").then(function (data)
         d3.selectAll("p").classed('noresults', true).html("");
 
 // This code is needed to prevent the page from reloading.
-       // d3.event.preventDefault();
+        d3.event.preventDefault();
 
 // This code will get the user's input from what the user will type in the html <input> since we assigned it the "user-input" id. It will get the value and store it in our inputValue variable
         const inputElement = d3.select("#user-input");
         const inputValue = inputElement.property("value").toUpperCase().trim();
 
 
-        const filteredChroms = civ.filter(civ => civ.SYMBOL == inputValue);
+
+        const filteredChroms = civ.filter(civ => {
+            return civ.SYMBOL === inputValue; // checks datatype
+        });
         //console.log(filteredChroms);
 
         // Once I had all the values in my output variable, all I needed was to loop through them and add them to the table one by one. This was done using d3, where I inserted the value for each one of the columns I wanted using the necessary html to fit each table row.
