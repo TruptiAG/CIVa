@@ -22,8 +22,7 @@ d3.csv("data/civ_data.csv").then(function (data)
 
 
 
-        const filteredChroms = civ.filter(civ => {
-            return civ.SYMBOL == inputValue; // checks datatype
+        const filteredChroms = civ.filter(civ => civ.SYMBOL == inputValue) // checks datatype
         });
         console.log(filteredChroms);
         //if (filteredChroms.length === 0){
@@ -51,5 +50,5 @@ d3.csv("data/civ_data.csv").then(function (data)
 
 
 
-    }
+    };
     });
