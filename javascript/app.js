@@ -39,12 +39,21 @@ d3.csv("data/civ_data.csv").then(function (data)
                 "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
                 "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
                 "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
-        const GSheetReader = require('g-sheets-api')
-        GSheetReader(
-            options,
-            results=> {console.log(results);},
-            error=>{console.log("error");}
-        );
+
+        const reader = require("g-sheets-api");
+        const readerOptions = {
+            sheetId: "1-CmQumuz5ZiOvINhphEMgfplrJacQhD623RROcOBTAg",
+            returnAllResults: false,
+            filter: {
+                "key to filter on": inputValue,
+            },
+        };
+
+        reader(readerOptions, (results) => {
+            console.log(results);
+        });
+
+
 
     }
     });
