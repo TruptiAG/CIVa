@@ -36,7 +36,7 @@ d3.csv("data/civ_data.csv").then(function (data)
             console.log(filteredChroms);
 
 
-            d3.select("tbody").insert("tr td").html(
+            d3.select("tbody").insert("td tr").html(
 
                 "<td>" + [i+1] + "</td>" +
                 "<td>" + (filteredChroms[i]['Feature'])+"</td>" +
