@@ -18,8 +18,8 @@ d3.csv("data/civ_data_1.csv").then(function (data)
         var filteredChroms = civ.filter(civ => civ.SYMBOL==inputValue); // checks datatype
         console.log(filteredChroms);
         console.log(filteredChroms.length);
-        if (filteredChroms.length === 0){
-            d3.select("p").classed('noresults2', true).html("<strong>No record to match this symbol. Please contact to add this to the database!</strong>")
+        if (filteredChroms.length == 0){
+            d3.select("p").classed('noresults', true).html("<strong>No record to match this symbol. Please contact to add this to the database!</strong>")
         }
         for (var i = 0; i < filteredChroms.length; i++) {
             d3.select("tbody").insert("tr").html(
