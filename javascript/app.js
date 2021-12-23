@@ -1,9 +1,9 @@
 d3.csv("data/civ_data.csv").then(function (data)
     {
 
-        const civ = data;
-        const button = d3.select("#button");
-        const form = d3.select("#form");
+        var civ = data;
+        var button = d3.select("#button");
+        var form = d3.select("#form");
         button.on("click", runEnter);
         form.on("submit", runEnter);
 // Defining the function
@@ -17,8 +17,9 @@ d3.csv("data/civ_data.csv").then(function (data)
         //d3.event.preventDefault();
 
 // This code will get the user's input from what the user will type in the html <input> since we assigned it the "user-input" id. It will get the value and store it in our inputValue variable
-        const inputElement = d3.select("#user-input");
-        const inputValue = inputElement.property("value").toUpperCase().trim();
+        var inputElement = d3.select("#user-input");
+        var inputValue = inputElement.property("value").toUpperCase().trim();
+        console.log(inputValue);
 
 
 
@@ -32,7 +33,7 @@ d3.csv("data/civ_data.csv").then(function (data)
        // }
 
          //using d3 populate the table
-        for (let i = 0; i < filteredChroms.length; i++) {
+        for (var i = 0; i < filteredChroms.length; i++) {
             console.log(filteredChroms);
 
 
