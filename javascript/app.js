@@ -26,8 +26,12 @@ d3.csv("data/civ_data.csv").then(function (data)
             return civ.SYMBOL === inputValue; // checks datatype
         });
         //console.log(filteredChroms);
+        if (filteredChroms.length === 0){
+            d3.select("p").classed('noresults2', true).html("<strong>We don't a record to match this symbol. Please contact to add this to our database!</strong>")
 
-        // Once I had all the values in my output variable, all I needed was to loop through them and add them to the table one by one. This was done using d3, where I inserted the value for each one of the columns I wanted using the necessary html to fit each table row.
+        }
+
+         //using d3 populate the table
         for (let i = 0; i < filteredChroms.length; i++) {
 
 
