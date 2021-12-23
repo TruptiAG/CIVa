@@ -24,13 +24,7 @@ d3.csv("data/civ_data.csv").then(function (data)
         var filteredChroms = civ.filter(civ => civ.SYMBOL==inputValue);
         console.log(filteredChroms);
 
-
-
-
-
-
-
-// Once I had all the values in my output variable, all I needed was to loop through them and add them to the table one by one. This was done using d3, where I inserted the value for each one of the columns I wanted using the necessary html to fit each table row.
+        // Once I had all the values in my output variable, all I needed was to loop through them and add them to the table one by one. This was done using d3, where I inserted the value for each one of the columns I wanted using the necessary html to fit each table row.
         for (var i = 0; i < filteredChroms.length; i++) {
 
 
@@ -45,6 +39,19 @@ d3.csv("data/civ_data.csv").then(function (data)
                 "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
                 "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
                 "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
+        const GSheetReader = require('g-sheets-api')
+        GSheetReader(
+            options,
+            results=> {console.log(results);},
+            error=>{console.log("error");}
+        );
 
     }
     });
+
+const GSheetReader = require('g-sheets-api')
+GSheetReader(
+    options,
+    results=> {console.log(results);},
+    error=>{console.log("error");}
+);
