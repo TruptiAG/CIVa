@@ -33,6 +33,7 @@ d3.csv("data/civ_data.csv").then(function (data)
 
          //using d3 populate the table
         for (let i = 0; i < filteredChroms.length; i++) {
+            console.log(filteredChroms);
 
 
             d3.select("tbody").insert("tr td").html(
