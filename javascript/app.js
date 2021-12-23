@@ -45,7 +45,7 @@ d3.csv("data/civ_data.csv").then(function (data)
             sheetId: "1YEhFxIaQggoDsnAQZcT1k_w-A5ga-MjcfPzuwXBmKnk",
             returnAllResults: false,
             filter: {
-                "key to filter on": inputValue,
+                "SYMBOL": inputValue,
             },
         };
 
