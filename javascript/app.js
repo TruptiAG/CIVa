@@ -1,4 +1,4 @@
-d3.csv("data/civ_data.csv").then(function (data)
+d3.csv("data/civ_data_1.csv").then(function (data)
     {
 
         var civ = data;
