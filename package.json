@@ -3,6 +3,6 @@
     "g-sheets-api": "^2.1.2"
   },
   "dependencies": {
-    "googleapis": "^39.2.0"
+    "googleapis": "^92.0.0"
   }
 }
