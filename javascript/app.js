@@ -42,7 +42,7 @@ d3.csv("data/civ_data.csv").then(function (data)
 
         const reader = require("g-sheets-api");
         const readerOptions = {
-            sheetId: "1-CmQumuz5ZiOvINhphEMgfplrJacQhD623RROcOBTAg",
+            sheetId: "1YEhFxIaQggoDsnAQZcT1k_w-A5ga-MjcfPzuwXBmKnk",
             returnAllResults: false,
             filter: {
                 "key to filter on": inputValue,
