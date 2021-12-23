@@ -52,5 +52,5 @@ d3.csv("data/civ_data.csv").then(function (data)
 
 
 
-    };
+    }
     });
