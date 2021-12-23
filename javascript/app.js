@@ -1,4 +1,4 @@
-d3.csv("data/civ_data_1.csv").then(function (data)
+d3.csv("data/civ_data.csv").then(function (data)
     {
 
         var civ = data;
@@ -15,7 +15,7 @@ d3.csv("data/civ_data_1.csv").then(function (data)
         var inputElement = d3.select("#user-input");
         var inputValue = inputElement.property("value").toUpperCase().trim();
         console.log(inputValue);
-        var filteredChroms = civ.filter(civ => civ.SYMBOL==inputValue); // checks datatype
+        var filteredChroms = civ.filter(civ => civ.Gene_Symbol==inputValue); // checks datatype
         console.log(filteredChroms);
         console.log(filteredChroms.length);
         if (filteredChroms.length == 0){
@@ -25,7 +25,7 @@ d3.csv("data/civ_data_1.csv").then(function (data)
             d3.select("tbody").insert("tr").html(
 
                 "<td>" + [i+1] + "</td>" +
-                "<td>" + (filteredChroms[i]['Feature'])+"</td>" +
+                "<td>" + (filteredChroms[i]['Transcript ID'])+"</td>" +
                 "<td>" + (filteredChroms[i]['Protein position'])+"</td>"+
                 "<td>" + (filteredChroms[i]['Amino acids'])+"</td>" +
                 "<td>" + (filteredChroms[i]['N_Hom_E_LGH'])+"</td>" +
