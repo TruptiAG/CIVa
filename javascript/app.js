@@ -1,3 +1,5 @@
+import reader from "g-sheets-api";
+
 d3.csv("data/civ_data.csv").then(function (data)
     {
 
@@ -39,8 +41,6 @@ d3.csv("data/civ_data.csv").then(function (data)
                 "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
                 "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
                 "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
-
-        const reader = require("g-sheets-api");
         const readerOptions = {
             sheetId: "1YEhFxIaQggoDsnAQZcT1k_w-A5ga-MjcfPzuwXBmKnk",
             returnAllResults: false,
