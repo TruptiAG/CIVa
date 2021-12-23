@@ -34,21 +34,18 @@ d3.csv("data/civ_data_1.csv").then(function (data)
 
          //using d3 populate the table
         for (var i = 0; i < filteredChroms.length; i++) {
+            d3.select("tbody").insert("tr").html(
 
-
-
-            d3.select("tbody").insert("td").html(
-
-                "<tr>" + [i+1] + "</tr>" +
-                "<tr>" + (filteredChroms[i]['Feature'])+"</tr>" +
-                "<tr>" + (filteredChroms[i]['Protein position'])+"</tr>"+
-                "<tr>" + (filteredChroms[i]['Amino acids'])+"</tr>" +
-                "<tr>" + (filteredChroms[i]['N_Hom_E_LGH'])+"</tr>" +
-                "<tr>" + (filteredChroms[i]['N_Hom_BiB'])+"</tr>"+
-                "<tr>" + (filteredChroms[i]['N_Hom_Birm'])+"</tr>" +
-                "<tr>" + (filteredChroms[i]['N_Cosmic'])+"</tr>"+
-                "<tr>" + (filteredChroms[i]['Cancer tissues'])+"</tr>"+
-                "<tr>" + (filteredChroms[i]['N_Het_Gnomad'])+"</tr>") }
+                "<td>" + [i+1] + "</td>" +
+                "<td>" + (filteredChroms[i]['Feature'])+"</td>" +
+                "<td>" + (filteredChroms[i]['Protein position'])+"</td>"+
+                "<td>" + (filteredChroms[i]['Amino acids'])+"</td>" +
+                "<td>" + (filteredChroms[i]['N_Hom_E_LGH'])+"</td>" +
+                "<td>" + (filteredChroms[i]['N_Hom_BiB'])+"</td>"+
+                "<td>" + (filteredChroms[i]['N_Hom_Birm'])+"</td>" +
+                "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
+                "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
+                "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
 
 
 
