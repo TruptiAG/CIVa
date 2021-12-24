@@ -22,9 +22,22 @@ layout: default
 
 <br>
 
-<form id=”form”>
 
-    <input class="form-control"  id="user-input"  placeholder="Enter the Gene Symbol">
+
+<form id=”form”>
+    <div>
+        <p>Select Search Criteria</p>
+        <input type="radio" id="RGene" name="chkCriterion" value="gene" onclick="ShowHideDiv()" />
+        Gene Symbol
+        <input type="radio" id="RUniprot" name="chkCriterion" value ="uniprot" onclick="ShowHideDiv()" />
+        Uniprot ID
+    </div>
+    <div id="dvGene" style="display:none">
+        <input class="form-control"  id="user-input-gene"  placeholder="Enter Gene Symbol">
+    </div>
+    <div id="dvUniprot" style="display:none">
+        <input class="form-control"  id="user-input-uniprot"  placeholder="Enter Uniprot ID">
+    </div>
     <button class="btn btn-secondary" type="button" id="button">Find </button>
 </form>
 
@@ -77,10 +90,9 @@ layout: default
         </div>
     </div>
 </div>
-<div id="change page">
-    <h6>(Click <a href="https://truptiag.github.io/civa-uniprot/">here</a> to search by the Uniprot id instead)</h6>
-</div>
+
 <script src="javascript/app.js"></script>
+<script src="javascript/search.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
