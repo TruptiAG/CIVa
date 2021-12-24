@@ -32,56 +32,61 @@ d3.csv("data/civ_data.csv").then(function (data)
         else{
             inputValue=document.getElementById('RUniprot').value;
         }
-        if (inputValue==='gene'){
+        if (inputValue==='gene') {
 
             var inputElementGene = d3.select("#user-input-gene");
             var inputValueGene = inputElementGene.property("value").toUpperCase().trim();
             console.log(inputValueGene);
-            var filteredChromsGene = civ.filter(civ => civ.Gene_Symbol===inputValueGene); // checks datatype
+            var filteredChromsGene = civ.filter(civ => civ.Gene_Symbol === inputValueGene); // checks datatype
             console.log(filteredChromsGene);
             console.log(filteredChromsGene.length);
-            if (filteredChromsGene.length === 0){
+            if (filteredChromsGene.length === 0) {
                 d3.select("p").classed('noresults', true).html("<strong>No record to match this symbol. Please contact to add this to the database!</strong>")
             }
-            for (var i = 0; i < filteredChromsGene.length; i++) {
+            for (var k = 0; k < filteredChromsGene.length; k++) {
                 d3.select("tbody").insert("tr").html(
-                    "<td>" + [i+1] + "</td>" +
-                    "<td>" + (filteredChromsGene[i]['Transcript ID'])+"</td>" +
-                    "<td>" + (filteredChromsGene[i]['Protein position'])+"</td>"+
-                    "<td>" + (filteredChromsGene[i]['Amino acids'])+"</td>" +
-                    "<td>" + (filteredChromsGene[i]['N_Hom_E_LGH'])+"</td>" +
-                    "<td>" + (filteredChromsGene[i]['N_Hom_BiB'])+"</td>"+
-                    "<td>" + (filteredChromsGene[i]['N_Hom_Birm'])+"</td>" +
-                    "<td>" + (filteredChromsGene[i]['N_Cosmic'])+"</td>"+
-                    "<td>" + (filteredChromsGene[i]['Cancer tissues'])+"</td>"+
-                    "<td>" + (filteredChromsGene[i]['N_Het_Gnomad'])+"</td>") }
-
-
-
+                    "<td>" + [k + 1] + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['Transcript_ID']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Het_ELGH']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Het_BiB']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Het_BiB']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Hom_ELGH']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Hom_BiB']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Hom_Birm']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Cosmic']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['Cancer_tissues']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Het_Gnomad']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['N_Hom_Gnomad']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['Allelecount_Gnomad']) + "</td>" +
+                    "<td>" + (filteredChromsGene[k]['Allelefreq_Gnomad']) + "</td>")}
         }
         if (inputValue==='uniprot'){
 
             var inputElementUniprot = d3.select("#user-input-uniprot");
             var inputValueUniprot = inputElementUniprot.property("value").toUpperCase().trim();
             console.log(inputValueUniprot);
-            var filteredChroms = civ.filter(civ => civ.Uniprot_ID===inputValueUniprot); // checks datatype
-            console.log(filteredChroms);
-            console.log(filteredChroms.length);
-            if (filteredChroms.length === 0){
+            var filteredUniprot = civ.filter(civ => civ.Uniprot_ID===inputValueUniprot); // checks datatype
+            console.log(filteredUniprot);
+            console.log(filteredUniprot.length);
+            if (filteredUniprot.length === 0){
                 d3.select("p").classed('noresults', true).html("<strong>No record to match this uniprot id. Please contact to add this to the database!</strong>")
             }
-            for (var i = 0; i < filteredChroms.length; i++) {
+            for (var i = 0; i < filteredUniprot.length; i++) {
                 d3.select("tbody").insert("tr").html(
-                    "<td>" + [i+1] + "</td>" +
-                    "<td>" + (filteredChroms[i]['Transcript ID'])+"</td>" +
-                    "<td>" + (filteredChroms[i]['Protein position'])+"</td>"+
-                    "<td>" + (filteredChroms[i]['Amino acids'])+"</td>" +
-                    "<td>" + (filteredChroms[i]['N_Hom_E_LGH'])+"</td>" +
-                    "<td>" + (filteredChroms[i]['N_Hom_BiB'])+"</td>"+
-                    "<td>" + (filteredChroms[i]['N_Hom_Birm'])+"</td>" +
-                    "<td>" + (filteredChroms[i]['N_Cosmic'])+"</td>"+
-                    "<td>" + (filteredChroms[i]['Cancer tissues'])+"</td>"+
-                    "<td>" + (filteredChroms[i]['N_Het_Gnomad'])+"</td>") }
+                    "<td>" + [i + 1] + "</td>" +
+                    "<td>" + (filteredUniprot[i]['Transcript_ID']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Het_ELGH']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Het_BiB']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Het_BiB']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Hom_ELGH']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Hom_BiB']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Hom_Birm']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Cosmic']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['Cancer_tissues']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Het_Gnomad']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['N_Hom_Gnomad']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['Allelecount_Gnomad']) + "</td>" +
+                    "<td>" + (filteredUniprot[i]['Allelefreq_Gnomad']) + "</td>")}
 
 
         }
