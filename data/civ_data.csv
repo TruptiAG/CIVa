@@ -1,4 +1,4 @@
-Chromosome,Position,Consequence,Gene_Symbol,Uniprot ID,Transcript ID,Protein position,Amino acids,Existing_variation,AF_ELGH,AF_BiB,AF_Birm,N_Het_ELGH,N_Het_BiB,N_Het_Birm,N_Hom_ELGH,N_Hom_BiB,N_Hom_Birm,N_Cosmic,Cancer tissues,N_Het_Gnomad,N_Hom_Gnomad,,
+Chromosome,Position,Consequence,Gene_Symbol,Uniprot_ID,Transcript ID,Protein position,Amino acids,Existing_variation,AF_ELGH,AF_BiB,AF_Birm,N_Het_ELGH,N_Het_BiB,N_Het_Birm,N_Hom_ELGH,N_Hom_BiB,N_Hom_Birm,N_Cosmic,Cancer tissues,N_Het_Gnomad,N_Hom_Gnomad,,
 chr1,43360099,splice_donor_variant,CDC20,Q12834,ENST00000372462,,,rs771036544,0.00013224,0,0,1,0,0,0,0,0,,,NA,NA,,
 chr1,173811212,stop_gained,CENPL,Q8N0S6,ENST00000367710,30,R/*,COSM4225956&COSM424626,0.000143968,0,0,1,0,0,0,0,0,,,NA,NA,,
 chr1,214613917,splice_donor_variant,CENPF,P49454,ENST00000366955,,,rs374123290,0.00013231,0,0,1,0,0,0,0,0,,,NA,NA,,
